@@ -23,13 +23,17 @@ namespace OnlineShoppingTracker
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            await NavigationService.NavigateAsync("ProductStageTabbedPage?selectedTab=WishListPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<ProductStageTabbedPage, ProductStageTabbedPageViewModel>();
+            containerRegistry.RegisterForNavigation<WishListPage, WishListPageViewModel>();
+            containerRegistry.RegisterForNavigation<PurchaseListPage, PurchaseListPageViewModel>();
+            containerRegistry.RegisterForNavigation<ReturnListPage, ReturnListPageViewModel>();
         }
     }
 }
