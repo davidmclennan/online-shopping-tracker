@@ -4,7 +4,9 @@
             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
             prism:ViewModelLocator.AutowireViewModel="True"
             x:Class="OnlineShoppingTracker.Views.ProductStageTabbedPage"
-            xmlns:local="clr-namespace:OnlineShoppingTracker.Views">
+            xmlns:local="clr-namespace:OnlineShoppingTracker.Views"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom">
     <local:WishListPage/>
     <local:PurchaseListPage/>
     <local:ReturnListPage/>

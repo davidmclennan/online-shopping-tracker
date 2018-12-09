@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="OnlineShoppingTracker.Views.ReturnListPage">
+             x:Class="OnlineShoppingTracker.Views.ReturnListPage"
+             Title="Returns"
+             Icon="ic_returns">
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
         <Label Text="Welcome to Return List!" />
     </StackLayout>

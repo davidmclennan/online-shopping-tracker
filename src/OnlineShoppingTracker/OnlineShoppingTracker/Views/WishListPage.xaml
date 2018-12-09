@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="OnlineShoppingTracker.Views.WishListPage">
+             x:Class="OnlineShoppingTracker.Views.WishListPage"
+             Title="Wish List"
+             Icon="ic_wish_list">
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
         <Label Text="Welcome to Wish List!" />
     </StackLayout>
