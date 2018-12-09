@@ -3,12 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="OnlineShoppingTracker.Views.ReturnListPage"
-             Title="Returns">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Return Add"/>
-    </ContentPage.ToolbarItems>
-    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to Return List!" />
+             x:Class="OnlineShoppingTracker.Views.KeptListPage"
+             Title="Kept Items">
+    <StackLayout>
+        <Label Text="Items you kept (i.e. didn't return) go here"/>
     </StackLayout>
 </ContentPage>

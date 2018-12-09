@@ -6,8 +6,25 @@
             x:Class="OnlineShoppingTracker.Views.ProductStageTabbedPage"
             xmlns:local="clr-namespace:OnlineShoppingTracker.Views"
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
-            android:TabbedPage.ToolbarPlacement="Bottom">
-    <local:WishListPage/>
-    <local:PurchaseListPage/>
-    <local:ReturnListPage/>
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            android:TabbedPage.IsSwipePagingEnabled="False"
+            android:TabbedPage.IsSmoothScrollEnabled="False">
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem Text="Test"/>
+    </TabbedPage.ToolbarItems>
+    <NavigationPage Title="Wish List" Icon="ic_wish_list">
+        <x:Arguments>
+            <local:WishListPage/>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Purchases" Icon="ic_purchases">
+        <x:Arguments>
+            <local:PurchaseListPage/>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Returns" Icon="ic_returns">
+        <x:Arguments>
+            <local:ReturnListPage/>
+        </x:Arguments>
+    </NavigationPage>
 </TabbedPage>
