@@ -18,9 +18,18 @@ namespace OnlineShoppingTracker.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
+        public DelegateCommand<string> NavigateCommand { get; }
+
         public ViewModelBase(INavigationService navigationService)
         {
             NavigationService = navigationService;
+
+            NavigateCommand = new DelegateCommand<string>(OnNavigateCommandExecuted);
+        }
+
+        private async void OnNavigateCommandExecuted(string path)
+        {
+            await NavigationService.NavigateAsync(path);
         }
 
         public virtual void OnNavigatedFrom(INavigationParameters parameters)
