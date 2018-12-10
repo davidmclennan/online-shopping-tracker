@@ -29,7 +29,11 @@ namespace OnlineShoppingTracker.ViewModels
 
         private async void OnNavigateCommandExecuted(string path)
         {
-            await NavigationService.NavigateAsync(path);
+            var result = await NavigationService.NavigateAsync(path);
+            if (!result.Success)
+            {
+                System.Diagnostics.Debug.WriteLine(result.Exception.Message);
+            }
         }
 
         public virtual void OnNavigatedFrom(INavigationParameters parameters)

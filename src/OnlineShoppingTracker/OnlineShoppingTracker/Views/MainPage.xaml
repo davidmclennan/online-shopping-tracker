@@ -5,8 +5,8 @@
     <MasterDetailPage.Master>
         <ContentPage Title="Menu">
             <StackLayout Padding="20">
-                <Button Text="Home" Command="{Binding NavigateCommand}" CommandParameter="MainPage/ProductStageTabbedPage" />
-                <Button Text="Kept Items" Command="{Binding NavigateCommand}" CommandParameter="MainPage/NavigationPage/KeptListPage" />
+                <Button Text="Home" Command="{Binding NavigateCommand}" CommandParameter="ProductStageTabbedPage" />
+                <Button Text="Kept Items" Command="{Binding NavigateCommand}" CommandParameter="NavigationPage/KeptListPage" />
             </StackLayout>
         </ContentPage>
     </MasterDetailPage.Master>
