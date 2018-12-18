@@ -6,9 +6,9 @@ using System.Linq;
 
 namespace OnlineShoppingTracker.ViewModels
 {
-	public class ProductStageTabbedPageViewModel : BindableBase
+	public class StagesTabbedPageViewModel : BindableBase
 	{
-        public ProductStageTabbedPageViewModel()
+        public StagesTabbedPageViewModel()
         {
 
         }

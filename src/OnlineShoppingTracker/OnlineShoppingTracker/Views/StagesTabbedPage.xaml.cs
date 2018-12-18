@@ -2,9 +2,9 @@
 
 namespace OnlineShoppingTracker.Views
 {
-    public partial class ProductStageTabbedPage : TabbedPage
+    public partial class StagesTabbedPage : TabbedPage
     {
-        public ProductStageTabbedPage()
+        public StagesTabbedPage()
         {
             InitializeComponent();
         }

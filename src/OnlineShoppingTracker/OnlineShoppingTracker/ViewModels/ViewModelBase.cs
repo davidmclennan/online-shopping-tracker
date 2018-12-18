@@ -24,10 +24,10 @@ namespace OnlineShoppingTracker.ViewModels
         {
             NavigationService = navigationService;
 
-            NavigateCommand = new DelegateCommand<string>(OnNavigateCommandExecuted);
+            NavigateCommand = new DelegateCommand<string>(ExecuteNavigateCommand);
         }
 
-        private async void OnNavigateCommandExecuted(string path)
+        private async void ExecuteNavigateCommand(string path)
         {
             var result = await NavigationService.NavigateAsync(path);
             if (!result.Success)
