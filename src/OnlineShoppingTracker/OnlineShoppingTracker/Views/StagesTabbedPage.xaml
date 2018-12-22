@@ -1,30 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
-            prism:ViewModelLocator.AutowireViewModel="True"
             x:Class="OnlineShoppingTracker.Views.StagesTabbedPage"
+            xmlns:prismNav="clr-namespace:Prism.Navigation.Xaml;assembly=Prism.Forms"
             xmlns:local="clr-namespace:OnlineShoppingTracker.Views"
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom"
             android:TabbedPage.IsSwipePagingEnabled="False"
             android:TabbedPage.IsSmoothScrollEnabled="False">
     <TabbedPage.ToolbarItems>
-        <ToolbarItem Text="Test"/>
+        <ToolbarItem Icon="ic_add" Text="Add new" Command="{prismNav:NavigateTo 'NavigationPage/ShopListPage'}" />
     </TabbedPage.ToolbarItems>
     <NavigationPage Title="Wish List" Icon="ic_wish_list">
         <x:Arguments>
-            <local:WishListPage/>
+            <local:WishListPage />
         </x:Arguments>
     </NavigationPage>
     <NavigationPage Title="Purchases" Icon="ic_purchases">
         <x:Arguments>
-            <local:PurchaseListPage/>
+            <local:PurchaseListPage />
         </x:Arguments>
     </NavigationPage>
     <NavigationPage Title="Returns" Icon="ic_returns">
         <x:Arguments>
-            <local:ReturnListPage/>
+            <local:ReturnListPage />
         </x:Arguments>
     </NavigationPage>
 </TabbedPage>
