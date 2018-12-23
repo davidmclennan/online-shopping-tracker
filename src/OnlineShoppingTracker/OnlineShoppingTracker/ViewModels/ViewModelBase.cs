@@ -18,6 +18,13 @@ namespace OnlineShoppingTracker.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
+        private bool isBusy = true;
+        public bool IsBusy
+        {
+            get { return isBusy; }
+            set { SetProperty(ref isBusy, value); }
+        }
+
         public DelegateCommand<string> NavigateCommand { get; }
 
         public ViewModelBase(INavigationService navigationService)

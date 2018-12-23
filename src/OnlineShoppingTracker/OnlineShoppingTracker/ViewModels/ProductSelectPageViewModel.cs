@@ -10,6 +10,8 @@ namespace OnlineShoppingTracker.ViewModels
 {
 	public class ProductSelectPageViewModel : ViewModelBase
 	{
+        bool firstLoad = true;
+
         private string shopurl;
         public string ShopUrl
         {
@@ -17,15 +19,26 @@ namespace OnlineShoppingTracker.ViewModels
             set { SetProperty(ref shopurl, value); }
         }
 
+        public DelegateCommand FirstLoadCommand { get; }
+
         public ProductSelectPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
-
+            FirstLoadCommand = new DelegateCommand(ExecuteFirstLoadCommand);
         }
 
-        public override void OnNavigatingTo(INavigationParameters parameters)
+        private void ExecuteFirstLoadCommand()
         {
-            base.OnNavigatingTo(parameters);
+            if (firstLoad)
+            {
+                IsBusy = false;
+                firstLoad = false;
+            }
+        }
+
+        public override void OnNavigatedTo(INavigationParameters parameters)
+        {
+            base.OnNavigatedTo(parameters);
             ShopUrl = parameters.GetValue<string>("shopUrl");
         }
     }

@@ -2,12 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OnlineShoppingTracker.Views.ProductSelectPage"
+             xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
              Title="Select a Product">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Save" />
     </ContentPage.ToolbarItems>
     <Grid>
-        <!--<ActivityIndicator />-->
-        <WebView Source="{Binding ShopUrl}" />
+        <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" HorizontalOptions="Center" VerticalOptions="Center" />
+        <WebView Source="{Binding ShopUrl}" IsVisible="{Binding IsBusy, Converter={StaticResource inverseBool}}">
+            <WebView.Behaviors>
+                <b:EventToCommandBehavior EventName="Navigated"
+                                          Command="{Binding FirstLoadCommand}" />
+            </WebView.Behaviors>
+        </WebView>
     </Grid>
 </ContentPage>
