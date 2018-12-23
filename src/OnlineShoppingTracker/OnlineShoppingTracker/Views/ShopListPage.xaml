@@ -2,13 +2,26 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OnlineShoppingTracker.Views.ShopListPage"
+             xmlns:prismNav="clr-namespace:Prism.Navigation.Xaml;assembly=Prism.Forms"
              Title="New Item"
              Padding="20">
     <StackLayout>
-        <Button Text="ASOS" BackgroundColor="#FAFAFA" VerticalOptions="FillAndExpand" />
+        <Button Text="ASOS" BackgroundColor="#FAFAFA" VerticalOptions="FillAndExpand" Command="{prismNav:NavigateTo 'ProductSelectPage'}">
+            <Button.CommandParameter>
+                <prismNav:NavigationParameter Key="shopUrl" Value="https://www.asos.com/" />
+            </Button.CommandParameter>
+        </Button>
         <BoxView Color="Gray" HeightRequest="1" />
-        <Button Text="H&amp;M" BackgroundColor="#FAFAFA" VerticalOptions="FillAndExpand" />
+        <Button Text="H&amp;M" BackgroundColor="#FAFAFA" VerticalOptions="FillAndExpand" Command="{prismNav:NavigateTo 'ProductSelectPage'}">
+            <Button.CommandParameter>
+                <prismNav:NavigationParameter Key="shopUrl" Value="https://www2.hm.com/" />
+            </Button.CommandParameter>
+        </Button>
         <BoxView Color="Gray" HeightRequest="1" />
-        <Button Text="Uniqlo" BackgroundColor="#FAFAFA" VerticalOptions="FillAndExpand" />
+        <Button Text="Uniqlo" BackgroundColor="#FAFAFA" VerticalOptions="FillAndExpand" Command="{prismNav:NavigateTo 'ProductSelectPage'}">
+            <Button.CommandParameter>
+                <prismNav:NavigationParameter Key="shopUrl" Value="https://www.uniqlo.com/" />
+            </Button.CommandParameter>
+        </Button>
     </StackLayout>
 </ContentPage>
