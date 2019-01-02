@@ -2,10 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OnlineShoppingTracker.Views.ProductSelectPage"
+             xmlns:prismNav="clr-namespace:Prism.Navigation.Xaml;assembly=Prism.Forms"
              xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
              Title="Select a Product">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Save" />
+        <ToolbarItem Text="Save" Command="{prismNav:NavigateTo 'ProductPopupPage'}" />
     </ContentPage.ToolbarItems>
     <Grid>
         <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" HorizontalOptions="Center" VerticalOptions="Center" />

@@ -4,6 +4,7 @@ using OnlineShoppingTracker.ViewModels;
 using OnlineShoppingTracker.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Prism.Plugin.Popups;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace OnlineShoppingTracker
@@ -28,6 +29,9 @@ namespace OnlineShoppingTracker
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            // This updates INavigationService and registers PopupNavigation.Instance
+            containerRegistry.RegisterPopupNavigationService();
+
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<StagesTabbedPage, StagesTabbedPageViewModel>();
@@ -37,6 +41,7 @@ namespace OnlineShoppingTracker
             containerRegistry.RegisterForNavigation<KeptListPage, KeptListPageViewModel>();
             containerRegistry.RegisterForNavigation<ShopListPage, ShopListPageViewModel>();
             containerRegistry.RegisterForNavigation<ProductSelectPage, ProductSelectPageViewModel>();
+            containerRegistry.RegisterForNavigation<ProductPopupPage, ProductPopupPageViewModel>();
         }
     }
 }
