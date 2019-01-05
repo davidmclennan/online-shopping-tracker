@@ -2,11 +2,13 @@
 <popup:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OnlineShoppingTracker.Views.ProductPopupPage"
-             xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup">
+             xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:prismNav="clr-namespace:Prism.Navigation.Xaml;assembly=Prism.Forms">
     <Frame HorizontalOptions="Center" VerticalOptions="Center">
         <StackLayout>
             <Label Text="Product popup" />
-            <Button Text="OK" />
+            <Button Text="Save" />
+            <Button Text="Cancel" Command="{prismNav:GoBack}" />
         </StackLayout>
     </Frame>
 </popup:PopupPage>
