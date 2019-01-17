@@ -4,6 +4,7 @@
              x:Class="OnlineShoppingTracker.Views.ProductPopupPage"
              xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
              xmlns:prismNav="clr-namespace:Prism.Navigation.Xaml;assembly=Prism.Forms"
+             xmlns:effects="clr-namespace:OnlineShoppingTracker.Effects"
              Padding="20">
     <Frame HorizontalOptions="Center" VerticalOptions="Center">
         <StackLayout>
@@ -16,15 +17,39 @@
                     <Entry />
                     <Label Text="Select Priority" />
                     <StackLayout Orientation="Horizontal">
-                        <Button Text="Low" CornerRadius="50" BackgroundColor="Accent" />
-                        <Button Text="Medium" CornerRadius="50" />
-                        <Button Text="High" CornerRadius="50" />
+                        <Button Text="Low" CornerRadius="50" BackgroundColor="Accent">
+                            <Button.Effects>
+                                <effects:LowercaseButtonEffect />
+                            </Button.Effects>
+                        </Button>
+                        <Button Text="Medium" CornerRadius="50">
+                            <Button.Effects>
+                                <effects:LowercaseButtonEffect />
+                            </Button.Effects>
+                        </Button>
+                        <Button Text="High" CornerRadius="50">
+                            <Button.Effects>
+                                <effects:LowercaseButtonEffect />
+                            </Button.Effects>
+                        </Button>
                     </StackLayout>
                     <Label Text="Select Stage" />
                     <StackLayout Orientation="Horizontal">
-                        <Button Text="Wish List" CornerRadius="50" BackgroundColor="Accent" />
-                        <Button Text="Purchases" CornerRadius="50" />
-                        <Button Text="Returns" CornerRadius="50" />
+                        <Button Text="Wish List" CornerRadius="50" BackgroundColor="Accent">
+                            <Button.Effects>
+                                <effects:LowercaseButtonEffect />
+                            </Button.Effects>
+                        </Button>
+                        <Button Text="Purchases" CornerRadius="50">
+                            <Button.Effects>
+                                <effects:LowercaseButtonEffect />
+                            </Button.Effects>
+                        </Button>
+                        <Button Text="Returns" CornerRadius="50">
+                            <Button.Effects>
+                                <effects:LowercaseButtonEffect />
+                            </Button.Effects>
+                        </Button>
                     </StackLayout>
                 </StackLayout>
             </ScrollView>
