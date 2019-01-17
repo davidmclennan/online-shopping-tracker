@@ -3,12 +3,35 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OnlineShoppingTracker.Views.ProductPopupPage"
              xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
-             xmlns:prismNav="clr-namespace:Prism.Navigation.Xaml;assembly=Prism.Forms">
+             xmlns:prismNav="clr-namespace:Prism.Navigation.Xaml;assembly=Prism.Forms"
+             Padding="20">
     <Frame HorizontalOptions="Center" VerticalOptions="Center">
         <StackLayout>
-            <Label Text="Product popup" />
-            <Button Text="Save" />
-            <Button Text="Cancel" Command="{prismNav:GoBack}" />
+            <Label Text="SAVE ITEM" TextColor="Accent" FontAttributes="Bold" />
+            <ScrollView>
+                <StackLayout>
+                    <Label Text="Name" />
+                    <Entry />
+                    <Label Text="Price" />
+                    <Entry />
+                    <Label Text="Select Priority" />
+                    <StackLayout Orientation="Horizontal">
+                        <Button Text="Low" CornerRadius="50" BackgroundColor="Accent" />
+                        <Button Text="Medium" CornerRadius="50" />
+                        <Button Text="High" CornerRadius="50" />
+                    </StackLayout>
+                    <Label Text="Select Stage" />
+                    <StackLayout Orientation="Horizontal">
+                        <Button Text="Wish List" CornerRadius="50" BackgroundColor="Accent" />
+                        <Button Text="Purchases" CornerRadius="50" />
+                        <Button Text="Returns" CornerRadius="50" />
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Save" HorizontalOptions="EndAndExpand" BackgroundColor="White" TextColor="Accent" />
+                <Button Text="Cancel" Command="{prismNav:GoBack}" BackgroundColor="White" TextColor="Accent" />
+            </StackLayout>
         </StackLayout>
     </Frame>
 </popup:PopupPage>
