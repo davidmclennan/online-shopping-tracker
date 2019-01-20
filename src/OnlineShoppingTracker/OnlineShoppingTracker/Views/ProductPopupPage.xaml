@@ -1,51 +1,99 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <popup:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="OnlineShoppingTracker.Views.ProductPopupPage"
-             xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
-             xmlns:prismNav="clr-namespace:Prism.Navigation.Xaml;assembly=Prism.Forms"
-             xmlns:effects="clr-namespace:OnlineShoppingTracker.Effects"
-             Padding="20">
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 x:Class="OnlineShoppingTracker.Views.ProductPopupPage"
+                 xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 xmlns:prismNav="clr-namespace:Prism.Navigation.Xaml;assembly=Prism.Forms"
+                 xmlns:effects="clr-namespace:OnlineShoppingTracker.Effects"
+                 Padding="20">
     <Frame HorizontalOptions="Center" VerticalOptions="Center">
         <StackLayout>
             <Label Text="SAVE ITEM" TextColor="Accent" FontAttributes="Bold" />
             <ScrollView>
                 <StackLayout>
                     <Label Text="Name" />
-                    <Entry />
+                    <Entry Text="{Binding Product.Name}" />
                     <Label Text="Price" />
-                    <Entry />
+                    <Entry Text="{Binding Product.Price}" Keyboard="Numeric" />
                     <Label Text="Select Priority" />
-                    <StackLayout Orientation="Horizontal">
-                        <Button Text="Low" CornerRadius="50" BackgroundColor="Accent">
+                    <StackLayout Orientation="Horizontal" HeightRequest="35">
+                        <Button Text="Low" CornerRadius="50" Command="{Binding PriorityCommand}" CommandParameter="Low">
+                            <Button.Triggers>
+                                <DataTrigger TargetType="Button"
+                                             Binding="{Binding Priority}"
+                                             Value="Low">
+                                    <Setter Property="TextColor" Value="White" />
+                                    <Setter Property="BackgroundColor" Value="Accent" />
+                                </DataTrigger>
+                            </Button.Triggers>
                             <Button.Effects>
                                 <effects:LowercaseButtonEffect />
                             </Button.Effects>
                         </Button>
-                        <Button Text="Medium" CornerRadius="50">
+                        <Button Text="Medium" CornerRadius="50" Command="{Binding PriorityCommand}" CommandParameter="Medium">
+                            <Button.Triggers>
+                                <DataTrigger TargetType="Button"
+                                             Binding="{Binding Priority}"
+                                             Value="Medium">
+                                    <Setter Property="TextColor" Value="White" />
+                                    <Setter Property="BackgroundColor" Value="Accent" />
+                                </DataTrigger>
+                            </Button.Triggers>
                             <Button.Effects>
                                 <effects:LowercaseButtonEffect />
                             </Button.Effects>
                         </Button>
-                        <Button Text="High" CornerRadius="50">
+                        <Button Text="High" CornerRadius="50" Command="{Binding PriorityCommand}" CommandParameter="High">
+                            <Button.Triggers>
+                                <DataTrigger TargetType="Button"
+                                             Binding="{Binding Priority}"
+                                             Value="High">
+                                    <Setter Property="TextColor" Value="White" />
+                                    <Setter Property="BackgroundColor" Value="Accent" />
+                                </DataTrigger>
+                            </Button.Triggers>
                             <Button.Effects>
                                 <effects:LowercaseButtonEffect />
                             </Button.Effects>
                         </Button>
                     </StackLayout>
                     <Label Text="Select Stage" />
-                    <StackLayout Orientation="Horizontal">
-                        <Button Text="Wish List" CornerRadius="50" BackgroundColor="Accent">
+                    <StackLayout Orientation="Horizontal" HeightRequest="35">
+                        <Button Text="Wish List" CornerRadius="50" Command="{Binding StageCommand}" CommandParameter="Wish List">
+                            <Button.Triggers>
+                                <DataTrigger TargetType="Button"
+                                             Binding="{Binding Stage}"
+                                             Value="Wish List">
+                                    <Setter Property="TextColor" Value="White" />
+                                    <Setter Property="BackgroundColor" Value="Accent" />
+                                </DataTrigger>
+                            </Button.Triggers>
                             <Button.Effects>
                                 <effects:LowercaseButtonEffect />
                             </Button.Effects>
                         </Button>
-                        <Button Text="Purchases" CornerRadius="50">
+                        <Button Text="Purchases" CornerRadius="50" Command="{Binding StageCommand}" CommandParameter="Purchases">
+                            <Button.Triggers>
+                                <DataTrigger TargetType="Button"
+                                             Binding="{Binding Stage}"
+                                             Value="Purchases">
+                                    <Setter Property="TextColor" Value="White" />
+                                    <Setter Property="BackgroundColor" Value="Accent" />
+                                </DataTrigger>
+                            </Button.Triggers>
                             <Button.Effects>
                                 <effects:LowercaseButtonEffect />
                             </Button.Effects>
                         </Button>
-                        <Button Text="Returns" CornerRadius="50">
+                        <Button Text="Returns" CornerRadius="50" Command="{Binding StageCommand}" CommandParameter="Returns">
+                            <Button.Triggers>
+                                <DataTrigger TargetType="Button"
+                                             Binding="{Binding Stage}"
+                                             Value="Returns">
+                                    <Setter Property="TextColor" Value="White" />
+                                    <Setter Property="BackgroundColor" Value="Accent" />
+                                </DataTrigger>
+                            </Button.Triggers>
                             <Button.Effects>
                                 <effects:LowercaseButtonEffect />
                             </Button.Effects>
