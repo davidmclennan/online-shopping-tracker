@@ -20,7 +20,7 @@
                         <Button Text="Low" CornerRadius="50" Command="{Binding PriorityCommand}" CommandParameter="Low">
                             <Button.Triggers>
                                 <DataTrigger TargetType="Button"
-                                             Binding="{Binding Priority}"
+                                             Binding="{Binding Product.Priority}"
                                              Value="Low">
                                     <Setter Property="TextColor" Value="White" />
                                     <Setter Property="BackgroundColor" Value="Accent" />
@@ -33,7 +33,7 @@
                         <Button Text="Medium" CornerRadius="50" Command="{Binding PriorityCommand}" CommandParameter="Medium">
                             <Button.Triggers>
                                 <DataTrigger TargetType="Button"
-                                             Binding="{Binding Priority}"
+                                             Binding="{Binding Product.Priority}"
                                              Value="Medium">
                                     <Setter Property="TextColor" Value="White" />
                                     <Setter Property="BackgroundColor" Value="Accent" />
@@ -46,7 +46,7 @@
                         <Button Text="High" CornerRadius="50" Command="{Binding PriorityCommand}" CommandParameter="High">
                             <Button.Triggers>
                                 <DataTrigger TargetType="Button"
-                                             Binding="{Binding Priority}"
+                                             Binding="{Binding Product.Priority}"
                                              Value="High">
                                     <Setter Property="TextColor" Value="White" />
                                     <Setter Property="BackgroundColor" Value="Accent" />
@@ -62,7 +62,7 @@
                         <Button Text="Wish List" CornerRadius="50" Command="{Binding StageCommand}" CommandParameter="Wish List">
                             <Button.Triggers>
                                 <DataTrigger TargetType="Button"
-                                             Binding="{Binding Stage}"
+                                             Binding="{Binding Product.Stage}"
                                              Value="Wish List">
                                     <Setter Property="TextColor" Value="White" />
                                     <Setter Property="BackgroundColor" Value="Accent" />
@@ -75,7 +75,7 @@
                         <Button Text="Purchases" CornerRadius="50" Command="{Binding StageCommand}" CommandParameter="Purchases">
                             <Button.Triggers>
                                 <DataTrigger TargetType="Button"
-                                             Binding="{Binding Stage}"
+                                             Binding="{Binding Product.Stage}"
                                              Value="Purchases">
                                     <Setter Property="TextColor" Value="White" />
                                     <Setter Property="BackgroundColor" Value="Accent" />
@@ -88,7 +88,7 @@
                         <Button Text="Returns" CornerRadius="50" Command="{Binding StageCommand}" CommandParameter="Returns">
                             <Button.Triggers>
                                 <DataTrigger TargetType="Button"
-                                             Binding="{Binding Stage}"
+                                             Binding="{Binding Product.Stage}"
                                              Value="Returns">
                                     <Setter Property="TextColor" Value="White" />
                                     <Setter Property="BackgroundColor" Value="Accent" />

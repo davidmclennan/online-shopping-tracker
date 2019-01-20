@@ -16,9 +16,6 @@ namespace OnlineShoppingTracker.ViewModels
             set { SetProperty(ref product, value); }
         }
 
-        public string Priority => Product.Priority;
-        public string Stage => Product.Stage;
-
         public DelegateCommand<string> PriorityCommand { get; }
         public DelegateCommand<string> StageCommand { get; }
 
@@ -33,13 +30,13 @@ namespace OnlineShoppingTracker.ViewModels
         private void ExecutePriorityCommand(string priority)
         {
             Product.Priority = priority;
-            RaisePropertyChanged(nameof(Priority));
+            RaisePropertyChanged(nameof(Product));
         }
 
         private void ExecuteStageCommand(string stage)
         {
             Product.Stage = stage;
-            RaisePropertyChanged(nameof(Stage));
+            RaisePropertyChanged(nameof(Product));
         }
     }
 }
