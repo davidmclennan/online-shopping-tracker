@@ -6,7 +6,7 @@
              xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
              Title="Select a Product">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Save" Command="{prismNav:NavigateTo 'ProductPopupPage'}" />
+        <ToolbarItem Icon="ic_product_save" Text="Save product" Command="{prismNav:NavigateTo 'ProductPopupPage'}" />
     </ContentPage.ToolbarItems>
     <Grid>
         <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" HorizontalOptions="Center" VerticalOptions="Center" />

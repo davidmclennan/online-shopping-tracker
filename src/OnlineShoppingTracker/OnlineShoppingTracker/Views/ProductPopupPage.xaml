@@ -16,7 +16,7 @@
                     <Label Text="Price" />
                     <Entry Text="{Binding Product.Price}" Keyboard="Numeric" />
                     <Label Text="Select Priority" />
-                    <StackLayout Orientation="Horizontal" HeightRequest="35">
+                    <StackLayout Orientation="Horizontal">
                         <Button Text="Low" CornerRadius="50" Command="{Binding PriorityCommand}" CommandParameter="Low">
                             <Button.Triggers>
                                 <DataTrigger TargetType="Button"
@@ -58,7 +58,7 @@
                         </Button>
                     </StackLayout>
                     <Label Text="Select Stage" />
-                    <StackLayout Orientation="Horizontal" HeightRequest="35">
+                    <StackLayout Orientation="Horizontal">
                         <Button Text="Wish List" CornerRadius="50" Command="{Binding StageCommand}" CommandParameter="Wish List">
                             <Button.Triggers>
                                 <DataTrigger TargetType="Button"
