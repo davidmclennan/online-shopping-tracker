@@ -5100,6 +5100,9 @@ namespace OnlineShoppingTracker.Droid
 			// aapt resource value: 0x7f0c0008
 			public const int ThemeOverlay_MediaRouter_Light = 2131492872;
 			
+			// aapt resource value: 0x7f0c0192
+			public const int ToolbarStyle = 2131493266;
+			
 			// aapt resource value: 0x7f0c011d
 			public const int Widget_AppCompat_ActionBar = 2131493149;
 			
