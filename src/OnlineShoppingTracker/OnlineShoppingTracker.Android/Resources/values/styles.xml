@@ -31,8 +31,6 @@
   </style>
 
   <style name="ToolbarStyle">
-    <item name="android:background">#FFFFFF</item> 
-    <item name="android:textColorPrimary">#696969</item>
-    <item name="colorControlNormal">#696969</item>
+    <item name="colorControlNormal">#757575</item>
   </style>
 </resources>
