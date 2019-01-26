@@ -4,10 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using OnlineShoppingTracker.Models;
+using Prism.Navigation;
 
 namespace OnlineShoppingTracker.ViewModels
 {
-	public class ProductPopupPageViewModel : BindableBase
+	public class ProductPopupPageViewModel : ViewModelBase
 	{
         private Product product;
         public Product Product
@@ -18,13 +19,16 @@ namespace OnlineShoppingTracker.ViewModels
 
         public DelegateCommand<string> PriorityCommand { get; }
         public DelegateCommand<string> StageCommand { get; }
+        public DelegateCommand SaveProductCommand { get; }
 
-        public ProductPopupPageViewModel()
+        public ProductPopupPageViewModel(INavigationService navigationService)
+            : base(navigationService)
         {
             Product = new Product { Priority = "Low", Stage = "Wish List" };
 
             PriorityCommand = new DelegateCommand<string>(ExecutePriorityCommand);
             StageCommand = new DelegateCommand<string>(ExecuteStageCommand);
+            SaveProductCommand = new DelegateCommand(ExecuteSaveProductCommand);
         }
 
         private void ExecutePriorityCommand(string priority)
@@ -37,6 +41,12 @@ namespace OnlineShoppingTracker.ViewModels
         {
             Product.Stage = stage;
             RaisePropertyChanged(nameof(Product));
+        }
+
+        private async void ExecuteSaveProductCommand()
+        {
+            await App.Database.SaveProductAsync(Product);
+            await NavigationService.GoBackAsync();
         }
     }
 }

@@ -102,7 +102,7 @@
                 </StackLayout>
             </ScrollView>
             <StackLayout Orientation="Horizontal">
-                <Button Text="Save" HorizontalOptions="EndAndExpand" BackgroundColor="White" TextColor="Accent" />
+                <Button Text="Save" Command="{Binding SaveProductCommand}" HorizontalOptions="EndAndExpand" BackgroundColor="White" TextColor="Accent" />
                 <Button Text="Cancel" Command="{prismNav:GoBack}" BackgroundColor="White" TextColor="Accent" />
             </StackLayout>
         </StackLayout>
