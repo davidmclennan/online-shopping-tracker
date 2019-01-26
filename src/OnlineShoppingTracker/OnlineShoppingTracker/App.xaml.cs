@@ -5,12 +5,29 @@ using OnlineShoppingTracker.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Prism.Plugin.Popups;
+using OnlineShoppingTracker.Data;
+using System.IO;
+using System;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace OnlineShoppingTracker
 {
     public partial class App
     {
+        static ProductDatabase database;
+
+        public static ProductDatabase Database
+        {
+            get
+            {
+                if (database == null)
+                {
+                    database = new ProductDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "OnlineShoppingTracker.db3"));
+                }
+                return database;
+            }
+        }
+
         /* 
          * The Xamarin Forms XAML Previewer in Visual Studio uses System.Activator.CreateInstance.
          * This imposes a limitation in which the App class must have a default constructor. 
