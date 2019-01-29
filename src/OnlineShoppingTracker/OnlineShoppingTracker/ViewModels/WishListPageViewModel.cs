@@ -44,10 +44,11 @@ namespace OnlineShoppingTracker.ViewModels
 
         private async Task LoadProducts()
         {
+            IsBusy = true;
             Products = new ObservableCollection<Product>(await App.Database.GetProductsWishListAsync());
+            IsBusy = false;
         }
 
-        // Add interface to ViewModelBase and override?
         public async void OnAppearing()
         {
             await LoadProducts();
