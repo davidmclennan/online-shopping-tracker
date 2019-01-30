@@ -13,49 +13,19 @@ using System.Threading.Tasks;
 
 namespace OnlineShoppingTracker.ViewModels
 {
-	public class WishListPageViewModel : ViewModelBase, IPageLifecycleAware
+	public class WishListPageViewModel : ProductListViewModelBase
     {
-        IPageDialogService _dialogService;
-
-        private ObservableCollection<Product> products;
-        public ObservableCollection<Product> Products
-        {
-            get { return products; }
-            set { SetProperty(ref products, value); }
-        }
-
-        public DelegateCommand<Product> DeleteCommand { get; }
-
         public WishListPageViewModel(INavigationService navigationService, IPageDialogService dialogService)
-            : base(navigationService)
+            : base(navigationService, dialogService)
         {
-            _dialogService = dialogService;
-            DeleteCommand = new DelegateCommand<Product>(ExecuteDeleteCommand);
+
         }
 
-        private async void ExecuteDeleteCommand(Product product)
-        {
-            if(await _dialogService.DisplayAlertAsync("Delete Product", "Are you sure you want to delete this product?", "Yes", "Cancel"))
-            {
-                await App.Database.DeleteProductAsync(product);
-                await LoadProducts();
-            }
-        }
-
-        private async Task LoadProducts()
+        public override async Task LoadProducts()
         {
             IsBusy = true;
             Products = new ObservableCollection<Product>(await App.Database.GetProductsWishListAsync());
             IsBusy = false;
-        }
-
-        public async void OnAppearing()
-        {
-            await LoadProducts();
-        }
-
-        public void OnDisappearing()
-        {
         }
     }
 }
