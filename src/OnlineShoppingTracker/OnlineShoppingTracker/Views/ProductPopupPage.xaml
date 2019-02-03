@@ -17,11 +17,11 @@
                     <Entry Text="{Binding Product.Price}" Keyboard="Numeric" />
                     <Label Text="Select Priority" />
                     <StackLayout Orientation="Horizontal">
-                        <Button Text="Low" CornerRadius="50" Command="{Binding PriorityCommand}" CommandParameter="Low">
+                        <Button Text="Low" CornerRadius="50" Command="{Binding PriorityCommand}" CommandParameter="LOW">
                             <Button.Triggers>
                                 <DataTrigger TargetType="Button"
                                              Binding="{Binding Product.Priority}"
-                                             Value="Low">
+                                             Value="LOW">
                                     <Setter Property="TextColor" Value="White" />
                                     <Setter Property="BackgroundColor" Value="Accent" />
                                 </DataTrigger>
@@ -30,11 +30,11 @@
                                 <effects:LowercaseButtonEffect />
                             </Button.Effects>
                         </Button>
-                        <Button Text="Medium" CornerRadius="50" Command="{Binding PriorityCommand}" CommandParameter="Medium">
+                        <Button Text="Medium" CornerRadius="50" Command="{Binding PriorityCommand}" CommandParameter="MED">
                             <Button.Triggers>
                                 <DataTrigger TargetType="Button"
                                              Binding="{Binding Product.Priority}"
-                                             Value="Medium">
+                                             Value="MED">
                                     <Setter Property="TextColor" Value="White" />
                                     <Setter Property="BackgroundColor" Value="Accent" />
                                 </DataTrigger>
@@ -43,11 +43,11 @@
                                 <effects:LowercaseButtonEffect />
                             </Button.Effects>
                         </Button>
-                        <Button Text="High" CornerRadius="50" Command="{Binding PriorityCommand}" CommandParameter="High">
+                        <Button Text="High" CornerRadius="50" Command="{Binding PriorityCommand}" CommandParameter="HIGH">
                             <Button.Triggers>
                                 <DataTrigger TargetType="Button"
                                              Binding="{Binding Product.Priority}"
-                                             Value="High">
+                                             Value="HIGH">
                                     <Setter Property="TextColor" Value="White" />
                                     <Setter Property="BackgroundColor" Value="Accent" />
                                 </DataTrigger>

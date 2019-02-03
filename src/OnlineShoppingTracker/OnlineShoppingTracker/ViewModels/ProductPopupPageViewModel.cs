@@ -24,7 +24,7 @@ namespace OnlineShoppingTracker.ViewModels
         public ProductPopupPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
-            Product = new Product { Priority = "Low", Stage = "Wish List" };
+            Product = new Product { Priority = "LOW", Stage = "Wish List" };
 
             PriorityCommand = new DelegateCommand<string>(ExecutePriorityCommand);
             StageCommand = new DelegateCommand<string>(ExecuteStageCommand);

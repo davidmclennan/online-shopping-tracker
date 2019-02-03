@@ -26,13 +26,13 @@
                         <Frame Margin="10, 5">
                             <StackLayout>
                                 <StackLayout Orientation="Horizontal">
-                                    <Frame HasShadow="False" BackgroundColor="Red" Padding="5, 0">
-                                        <Label Text="{Binding Priority}" TextColor="White" FontAttributes="Bold" />
+                                    <Frame HasShadow="False" BackgroundColor="{Binding PriorityColour}" Padding="5, 0">
+                                        <Label Text="{Binding Priority}" TextColor="White" FontAttributes="Bold" VerticalTextAlignment="Center" />
                                     </Frame>
-                                    <Label Text="{Binding Name}" FontSize="18" />
+                                    <Label Text="{Binding Name}" FontSize="18" VerticalTextAlignment="Center" />
                                     <!-- Add shop logo here -->
                                 </StackLayout>
-                                <Label Text="{Binding Price}" FontSize="14" />
+                                <Label Text="{Binding Price, StringFormat='{0:C}'}" FontSize="14" />
                                 <Button Text="Returning" HorizontalOptions="End" BackgroundColor="White" TextColor="Accent" Padding="0" />
                             </StackLayout>
                         </Frame>
