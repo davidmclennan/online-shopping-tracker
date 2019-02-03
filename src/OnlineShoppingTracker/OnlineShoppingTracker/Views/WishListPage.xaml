@@ -33,7 +33,7 @@
                                     <!-- Add shop logo here -->
                                 </StackLayout>
                                 <Label Text="{Binding Price, StringFormat='{0:C}'}" FontSize="14" />
-                                <Button Text="Purchased" HorizontalOptions="End" BackgroundColor="White" TextColor="Accent" Padding="0" />
+                                <Button Text="Purchased" HorizontalOptions="End" BackgroundColor="White" TextColor="Accent" Padding="0" Command="{Binding Source={x:Reference wishListPage}, Path=BindingContext.PurchasedCommand}" CommandParameter="{Binding .}" />
                             </StackLayout>
                         </Frame>
                         <ViewCell.ContextActions>

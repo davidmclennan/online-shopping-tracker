@@ -15,7 +15,7 @@ namespace OnlineShoppingTracker.ViewModels
 {
     public abstract class ProductListViewModelBase : ViewModelBase, IPageLifecycleAware
     {
-        IPageDialogService _dialogService;
+        public IPageDialogService _dialogService;
 
         private ObservableCollection<Product> products;
         public ObservableCollection<Product> Products
