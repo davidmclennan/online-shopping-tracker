@@ -7,7 +7,8 @@
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom"
             android:TabbedPage.IsSwipePagingEnabled="False"
-            android:TabbedPage.IsSmoothScrollEnabled="False">
+            android:TabbedPage.IsSmoothScrollEnabled="False"
+            BarBackgroundColor="White">
     <TabbedPage.ToolbarItems>
         <ToolbarItem Icon="ic_add" Text="Add new" Command="{prismNav:NavigateTo 'NavigationPage/ShopListPage'}" />
     </TabbedPage.ToolbarItems>
