@@ -32,6 +32,11 @@ namespace OnlineShoppingTracker.Data
             return database.QueryAsync<Product>("SELECT * FROM [Product] WHERE [Stage] = 'Wish List'");
         }
 
+        public Task<List<Product>> GetProductsOrdersAsync()
+        {
+            return database.QueryAsync<Product>("SELECT * FROM [Product] WHERE [Stage] = 'Orders'");
+        }
+
         public Task<List<Product>> GetProductsPurchasesAsync()
         {
             return database.QueryAsync<Product>("SELECT * FROM [Product] WHERE [Stage] = 'Purchases'");

@@ -59,6 +59,7 @@ namespace OnlineShoppingTracker
             containerRegistry.RegisterForNavigation<ShopListPage, ShopListPageViewModel>();
             containerRegistry.RegisterForNavigation<ProductSelectPage, ProductSelectPageViewModel>();
             containerRegistry.RegisterForNavigation<ProductPopupPage, ProductPopupPageViewModel>();
+            containerRegistry.RegisterForNavigation<OrderListPage, OrderListPageViewModel>();
         }
     }
 }

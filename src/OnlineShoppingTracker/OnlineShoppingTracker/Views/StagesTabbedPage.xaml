@@ -17,6 +17,11 @@
             <local:WishListPage />
         </x:Arguments>
     </NavigationPage>
+    <NavigationPage Title="Orders" Icon="ic_orders">
+        <x:Arguments>
+            <local:OrderListPage />
+        </x:Arguments>
+    </NavigationPage>
     <NavigationPage Title="Purchases" Icon="ic_purchases">
         <x:Arguments>
             <local:PurchaseListPage />

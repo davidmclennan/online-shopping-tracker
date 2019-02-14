@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OnlineShoppingTracker.Views.OrderListPage"
+             x:Name="orderListPage"
+             Title="Orders">
+    <Grid>
+        <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" HorizontalOptions="Center" VerticalOptions="Center" />
+        <Label Text="Order list is empty" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="False">
+            <Label.Triggers>
+                <MultiTrigger TargetType="Label">
+                    <MultiTrigger.Conditions>
+                        <BindingCondition Binding="{Binding IsBusy}"
+                               Value="False" />
+                        <BindingCondition Binding="{Binding Products.Count}"
+                               Value="0" />
+                    </MultiTrigger.Conditions>
+                    <Setter Property="IsVisible" Value="True" />
+                </MultiTrigger>
+            </Label.Triggers>
+        </Label>
+        <ListView ItemsSource="{Binding Products}" SeparatorVisibility="None" HasUnevenRows="True" SelectionMode="None" IsVisible="{Binding IsBusy, Converter={StaticResource inverseBool}}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame Margin="10, 5">
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame HasShadow="False" BackgroundColor="{Binding PriorityColour}" Padding="5, 0">
+                                        <Label Text="{Binding Priority}" TextColor="White" FontAttributes="Bold" VerticalTextAlignment="Center" />
+                                    </Frame>
+                                    <Label Text="{Binding Name}" FontSize="18" VerticalTextAlignment="Center" />
+                                    <!-- Add shop logo here -->
+                                </StackLayout>
+                                <Label Text="{Binding Price, StringFormat='{0:C}'}" FontSize="14" />
+                                <Button Text="Returned" HorizontalOptions="End" BackgroundColor="White" TextColor="Accent" Padding="0" />
+                            </StackLayout>
+                        </Frame>
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Delete" IsDestructive="True" Command="{Binding Source={x:Reference orderListPage}, Path=BindingContext.DeleteCommand}" CommandParameter="{Binding .}" />
+                        </ViewCell.ContextActions>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>
