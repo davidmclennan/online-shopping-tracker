@@ -7,17 +7,22 @@
     <StackLayout>
         <Frame>
             <Grid>
-                <Label Text="{Binding Product.Priority}" />
-                <Label Grid.Column="1" Text="{Binding Product.Name}" />
-                <Label Grid.Row="1" Text="{Binding Product.Price}" />
-                <Label Grid.Row="2" Text="{Binding Product.Url}" />
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Frame HasShadow="False" BackgroundColor="{Binding Product.PriorityColour}" Padding="5, 0">
+                    <Label Text="{Binding Product.Priority}" TextColor="White" FontAttributes="Bold" VerticalTextAlignment="Center" />
+                </Frame>
+                <Label Grid.Column="1" Text="{Binding Product.Name}" LineBreakMode="TailTruncation" />
+                <Label Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Product.Price, StringFormat='{0:C}'}" />
+                <Label Grid.Row="2" Grid.ColumnSpan="2" Text="{Binding Product.Url}" />
             </Grid>
         </Frame>
         <Frame>
             <StackLayout>
-                <Label Text="Order Date" />
+                <Label Text="Order Date" StyleClass="TopLabel" />
                 <DatePicker Date="{Binding Product.OrderDate}" />
-                <Label Text="Delivery Type" />
+                <Label Text="Delivery Type" StyleClass="TopLabel" />
                 <Picker SelectedItem="{Binding Product.DeliveryType}">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
@@ -28,6 +33,6 @@
                 </Picker>
             </StackLayout>
         </Frame>
-        <Button Text="Ordered" Command="{Binding OrderedCommand}" />
+        <Button Text="Ordered" Command="{Binding OrderedCommand}" StyleClass="PrimaryButton" Margin="0" />
     </StackLayout>
 </ContentPage>

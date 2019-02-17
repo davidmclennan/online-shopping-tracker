@@ -5,8 +5,14 @@
              x:Class="OnlineShoppingTracker.App"
              xmlns:converters="clr-namespace:OnlineShoppingTracker.Converters">
     <Application.Resources>
-
         <converters:InverseBoolConverter x:Key="inverseBool" />
-
+        <Style TargetType="Button" Class="PrimaryButton">
+            <Setter Property="BackgroundColor" Value="Accent" />
+            <Setter Property="TextColor" Value="White" />
+        </Style>
+        <Style TargetType="Label" Class="TopLabel">
+            <Setter Property="TextColor" Value="#9C9C9C" />
+            <Setter Property="FontSize" Value="12" />
+        </Style>
     </Application.Resources>
 </prism:PrismApplication>
