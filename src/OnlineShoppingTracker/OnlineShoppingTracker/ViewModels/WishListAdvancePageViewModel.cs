@@ -2,6 +2,7 @@
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
+using Prism.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,8 @@ namespace OnlineShoppingTracker.ViewModels
 {
 	public class WishListAdvancePageViewModel : ViewModelBase
     {
+        public IPageDialogService _dialogService;
+
         private Product product;
         public Product Product
         {
@@ -19,16 +22,21 @@ namespace OnlineShoppingTracker.ViewModels
 
         public DelegateCommand OrderedCommand { get; }
 
-        public WishListAdvancePageViewModel(INavigationService navigationService)
+        public WishListAdvancePageViewModel(INavigationService navigationService, IPageDialogService dialogService)
             : base(navigationService)
         {
+            _dialogService = dialogService;
             OrderedCommand = new DelegateCommand(ExecuteOrderedCommand);
         }
 
         private async void ExecuteOrderedCommand()
         {
-            Product.Stage = "Orders";
-            await App.Database.SaveProductAsync(Product);
+            if (await _dialogService.DisplayAlertAsync("Advance Stage", "Are you sure you want to advance this product to orders?", "Yes", "Cancel"))
+            {
+                Product.Stage = "Orders";
+                await App.Database.SaveProductAsync(Product);
+                await NavigationService.GoBackAsync();
+            }
         }
 
         public override void OnNavigatedTo(INavigationParameters parameters)
