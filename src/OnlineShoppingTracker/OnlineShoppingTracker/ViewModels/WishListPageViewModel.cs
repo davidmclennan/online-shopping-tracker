@@ -15,22 +15,9 @@ namespace OnlineShoppingTracker.ViewModels
 {
 	public class WishListPageViewModel : ProductListViewModelBase
     {
-        public DelegateCommand<Product> PurchasedCommand { get; }
-
         public WishListPageViewModel(INavigationService navigationService, IPageDialogService dialogService)
             : base(navigationService, dialogService)
         {
-            PurchasedCommand = new DelegateCommand<Product>(ExecutePurchasedCommand);
-        }
-
-        private async void ExecutePurchasedCommand(Product product)
-        {
-            if (await _dialogService.DisplayAlertAsync("Purchased Product", "Are you sure you want to advance this product to purchases?", "Yes", "Cancel"))
-            {
-                product.Stage = "Purchases";
-                await App.Database.SaveProductAsync(product);
-                await LoadProducts();
-            }
         }
 
         public override async Task LoadProducts()

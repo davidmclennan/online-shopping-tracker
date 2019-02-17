@@ -14,6 +14,9 @@ namespace OnlineShoppingTracker.Models
         public double Price { get; set; }
         public string Priority { get; set; }
         public string Stage { get; set; }
+        public string Url { get; set; }
+        public DateTime OrderDate { get; set; }
+        public string DeliveryType { get; set; }
 
         [Ignore]
         public Color PriorityColour

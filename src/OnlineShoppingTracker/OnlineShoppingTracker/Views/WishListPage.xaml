@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prismNav="clr-namespace:Prism.Navigation.Xaml;assembly=Prism.Forms"
              x:Class="OnlineShoppingTracker.Views.WishListPage"
              x:Name="wishListPage"
              Title="Wish List">
@@ -33,7 +34,11 @@
                                     <!-- Add shop logo here -->
                                 </StackLayout>
                                 <Label Text="{Binding Price, StringFormat='{0:C}'}" FontSize="14" />
-                                <Button Text="Purchased" HorizontalOptions="End" BackgroundColor="White" TextColor="Accent" Padding="0" Command="{Binding Source={x:Reference wishListPage}, Path=BindingContext.PurchasedCommand}" CommandParameter="{Binding .}" />
+                                <Button Text="Ordered" HorizontalOptions="End" BackgroundColor="White" TextColor="Accent" Padding="0" Command="{prismNav:NavigateTo 'WishListAdvancePage'}">
+                                    <Button.CommandParameter>
+                                        <prismNav:NavigationParameter Key="product" Value="{Binding .}" />
+                                    </Button.CommandParameter>
+                                </Button>
                             </StackLayout>
                         </Frame>
                         <ViewCell.ContextActions>

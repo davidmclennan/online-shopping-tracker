@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OnlineShoppingTracker.Views.WishListAdvancePage"
+             Title="Progress To Orders"
+             Padding="10">
+    <StackLayout>
+        <Frame>
+            <Grid>
+                <Label Text="{Binding Product.Priority}" />
+                <Label Grid.Column="1" Text="{Binding Product.Name}" />
+                <Label Grid.Row="1" Text="{Binding Product.Price}" />
+                <Label Grid.Row="2" Text="{Binding Product.Url}" />
+            </Grid>
+        </Frame>
+        <Frame>
+            <StackLayout>
+                <Label Text="Order Date" />
+                <DatePicker Date="{Binding Product.OrderDate}" />
+                <Label Text="Delivery Type" />
+                <Picker SelectedItem="{Binding Product.DeliveryType}">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Standard Delivery</x:String>
+                            <x:String>Next Day Delivery</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </StackLayout>
+        </Frame>
+        <Button Text="Ordered" Command="{Binding OrderedCommand}" />
+    </StackLayout>
+</ContentPage>
