@@ -41,6 +41,10 @@ namespace OnlineShoppingTracker
         {
             InitializeComponent();
 
+#if DEBUG
+            HotReloader.Current.Start(this);
+#endif
+
             await NavigationService.NavigateAsync("MainPage/StagesTabbedPage");
         }
 
